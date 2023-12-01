@@ -1,0 +1,62 @@
+#include<iostream>;
+using namespace std;
+class searching 
+{
+    private:
+   int  arr[10];
+    int a,b,key,mid;
+    public:
+    void search()
+    {
+        for(int i=0;i<5;i++)
+        {
+        cout<<"enter the number "<<i<<endl;
+        cin>>arr[i];
+        }
+        a=0;
+        b=5;
+        cout<<"enter the key";
+        cin>>key;
+        
+        for(int i=0;i<5;i++)
+        {
+            mid=(a+b)/2;
+            if(arr[mid]==key)
+            {
+                cout<<"element found at"<<i<<endl;
+                return;
+            }
+            else if(arr[mid-1]>key)
+            {
+                b=mid-1;
+                
+                
+            }
+            if(arr[mid-1]==key)
+                {
+                    cout<<"element found at "<<i;
+                    return;
+                }
+           else  if(arr[mid+1]==key)
+                {
+                    cout<<"element found at "<<i;
+                    return;
+                }
+
+            else if(arr[mid+1]<key)
+            {
+                a=mid+1;
+               
+              
+            }
+
+        }
+    }
+};
+int main()
+{
+    searching obj;
+    obj.search();
+    return 0;
+    
+}
